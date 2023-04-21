@@ -265,6 +265,19 @@ class CronJobManager(object):
                     self.make_log('Job in progress', success=True)
                     self.msg = self.cron_job.do()
                     self.make_log(self.msg, success=True)
+                    # To be able to add informations 
+                    # in the massage text box in the Django Admin
+                    if self.cron_log.message :
+                        self.cron_log.message = self.cron_log.message + \
+                                                    '\n' +\
+                                                    self.cron_job.message + \
+                                                    '\n' + \
+                                                    self.cron_job.admin_message
+                    else:
+                        self.cron_log.message = self.cron_job.message + \
+                                                    '\n' + \
+                                                    self.cron_job.admin_message
+                        
                     self.cron_job.set_prev_success_cron(
                         self.previously_ran_successful_cron
                     )
