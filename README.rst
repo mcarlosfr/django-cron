@@ -1,6 +1,6 @@
 This is a fork of the interesting Django-cron which actualy creates a way o have access to the cron launched in the Django-admin
 
-We juste adde the possibility to "improve" the retrieved information in the admin view by concatenating the LOG message with two different attibute of the cron that can be then modified as needed instead of just writing something when there is an error
+We juste added the possibility to "improve" the retrieved information in the admin view by concatenating the LOG message with two different attibute of the cron that can be then modified as needed instead of just writing something when there is an error
 
 
 
